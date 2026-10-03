@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://3daa4tnd6n6x"]
+
+[ext_resource type="Script" uid="uid://j4ain72rjt5y" path="res://game/scripts/game.gd" id="1_game"]
+[ext_resource type="PackedScene" path="res://game/scenes/ui/inventory_panel.tscn" id="2_inventory"]
+[ext_resource type="Script" uid="uid://cipcbw8ibb43v" path="res://game/scripts/item_toast.gd" id="3_toast"]
+
+[node name="Game" type="Control" unique_id=1023878334]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 8
+script = ExtResource("1_game")
+
+[node name="LocationHost" type="Control" parent="." unique_id=143967830]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1249756618]
+
+[node name="RecordButton" type="Button" parent="HUD" unique_id=147420319]
+unique_name_in_owner = true
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 200.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 20
+text = "Inventário"
+
+[node name="InventoryPanel" parent="HUD" unique_id=647860841 instance=ExtResource("2_inventory")]
+unique_name_in_owner = true
+
+[node name="ToastLayer" type="CanvasLayer" parent="." unique_id=1947554282]
+layer = 100
+
+[node name="ItemToast" type="PanelContainer" parent="ToastLayer" unique_id=297418116]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -420.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 100.0
+grow_horizontal = 0
+mouse_filter = 2
+script = ExtResource("3_toast")
+
+[node name="Margin" type="MarginContainer" parent="ToastLayer/ItemToast" unique_id=2018373605]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="HBox" type="HBoxContainer" parent="ToastLayer/ItemToast/Margin" unique_id=1100998979]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="Icon" type="TextureRect" parent="ToastLayer/ItemToast/Margin/HBox" unique_id=363838459]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Message" type="Label" parent="ToastLayer/ItemToast/Margin/HBox" unique_id=1465793667]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Item adquirido"
+vertical_alignment = 1
+autowrap_mode = 3

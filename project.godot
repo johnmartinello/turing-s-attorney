@@ -11,17 +11,24 @@ config_version=5
 [application]
 
 config/name="Turing's Attorney"
+run/main_scene="res://game/scenes/game.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
+GameState="*res://game/autoload/game_state.gd"
+Inventory="*res://game/autoload/inventory.gd"
+SceneRouter="*res://game/autoload/scene_router.gd"
+DialogueDirector="*res://game/autoload/dialogue_director.gd"
 
 [dialogic]
 
 directories/dch_directory={}
-directories/dtl_directory={}
+directories/dtl_directory={
+"1": "res://game/dialogue/timelines/1.dtl"
+}
 layout/style_directory={}
 glossary/default_case_sensitive=true
 layout/style_list=[]
@@ -62,8 +69,12 @@ audio/channel_defaults={
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="res://assets/kenney_cursor-pack/PNG/Outline/Default/gauntlet_point.png"
+mouse_cursor/custom_image_hotspot=Vector2(10, 6)
 
 [editor]
 
