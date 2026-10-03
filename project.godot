@@ -25,9 +25,13 @@ DialogueDirector="*res://game/autoload/dialogue_director.gd"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"Pericles": "res://game/dialogue/characters/Pericles/Pericles.dch",
+"Testemunha": "res://game/dialogue/characters/Testemunha.dch"
+}
 directories/dtl_directory={
-"1": "res://game/dialogue/timelines/1.dtl"
+"conversa_testemunha": "res://game/dialogue/timelines/conversa_testemunha.dtl",
+"pegar_distintivo": "res://game/dialogue/timelines/pegar_distintivo.dtl"
 }
 layout/style_directory={}
 glossary/default_case_sensitive=true
@@ -71,10 +75,13 @@ audio/channel_defaults={
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 mouse_cursor/custom_image="res://assets/kenney_cursor-pack/PNG/Outline/Default/gauntlet_point.png"
 mouse_cursor/custom_image_hotspot=Vector2(10, 6)
+window/size/min_width=1280
+window/size/min_height=720
 
 [editor]
 

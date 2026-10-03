@@ -246,7 +246,7 @@ Inicia timelines do Dialogic e aplica os sinais delas ao jogo.
 
 ## Descrição
 
-`start()` aceita um caminho `res://` terminado em `.dtl`, ou o nome registrado pelo Dialogic, como `office_intro`. No `_ready`, chama `DialogicResourceUtil.update()` para o Dialogic encontrar os `.dch` e `.dtl` do projeto.
+`start()` aceita um caminho `res://` terminado em `.dtl`, ou o nome registrado pelo Dialogic, como `pegar_distintivo`. No `_ready`, chama `DialogicResourceUtil.update()` para o Dialogic encontrar os `.dch` e `.dtl` do projeto.
 
 Enquanto `is_running` é `true`, `Location` desliga os botões do local, e a cena principal fecha o inventário.
 
@@ -388,7 +388,7 @@ Botão que troca o cursor do mouse enquanto o ponteiro está em cima.
 
 ## Descrição
 
-`Hotspot` e `ExitArrow` herdam esta classe. Fora desses controles, o cursor continua a seta definida em `display/mouse_cursor/custom_image` no `project.godot`.
+`Hotspot` e `ExitArrow` herdam esta classe. `Hotspot` usa a troca de cursor; `ExitArrow` sobrescreve esse comportamento para manter o cursor padrão e desenhar sua seta no próprio botão.
 
 Com o ponteiro em cima, e o botão ativo, o cursor passa a ser `icon_texture`, redimensionado para `proportions` com filtro nearest. O ponto de clique é `hotspot`, em pixels da textura original, escalado na mesma proporção. Nada é desenhado sobre o botão. Com o botão desativado, ou sem textura, o cursor volta à seta do projeto.
 
@@ -432,7 +432,7 @@ As propriedades ficam no inspetor. O clique chama `DialogueDirector.start()` com
 
 O cursor de `Interaction` troca enquanto o ponteiro está dentro do botão.
 
-A mesa do escritório usa `timeline` = `office_intro.dtl` e `timeline_if_flag` = `examine_desk.dtl`, com `flag` = `got_badge`.
+A mesa do escritório usa `timeline` = `pegar_distintivo.dtl`. A testemunha do saguão usa `timeline` = `conversa_testemunha.dtl`.
 
 ## Propriedades
 
@@ -494,13 +494,13 @@ Atualiza `visible` e `disabled` a partir de `required_flag`, `one_shot` e `Dialo
 
 **Script:** `res://game/scripts/exit_arrow.gd`
 
-Área de saída que troca de local. O cursor muda com o ponteiro dentro dela.
+Área de saída que mostra uma seta e troca de local.
 
 ## Descrição
 
-O botão nasce sem caixa e sem texto (`flat`, estilos vazios, `focus_mode` em `FOCUS_NONE`). O cursor, enquanto o ponteiro está dentro, é `icon_texture` no tamanho de `proportions`. Fora da área, volta a seta do projeto. Qualquer clique nessa área chama `SceneRouter.go_to(target_scene)`.
+O botão nasce sem caixa e sem texto (`flat`, estilos vazios, `focus_mode` em `FOCUS_NONE`). Ao passar o mouse sobre a área, a seta aparece centralizada no botão; `direction` escolhe para onde ela aponta. O cursor permanece a seta padrão do projeto. Qualquer clique nessa área chama `SceneRouter.go_to(target_scene)`.
 
-Durante o diálogo, o clique é ignorado e o cursor volta à seta do projeto. Enquanto `required_flag` falta, a área inteira fica invisível.
+Durante o diálogo, o clique é ignorado. Enquanto `required_flag` falta, a área inteira fica invisível.
 
 ## Propriedades
 
@@ -545,11 +545,11 @@ Cena aberta no clique, passada a `SceneRouter.go_to()`. O export aceita arquivos
 
 ### String required_flag = ""
 
-Enquanto `GameState` não tiver esta flag, a área fica invisível e desativada. Vazia, a área nasce disponível. O cursor só muda quando o ponteiro entra.
+Enquanto `GameState` não tiver esta flag, a área fica invisível e desativada. Vazia, a área nasce disponível.
 
 ### Direction direction = Direction.RIGHT
 
-Lado para o qual a saída aponta. O desenho do cursor é `icon_texture`, não este valor.
+Lado para o qual aponta a seta exibida no centro do botão durante o hover.
 
 ---
 
@@ -557,7 +557,7 @@ Lado para o qual a saída aponta. O desenho do cursor é `icon_texture`, não es
 
 ### void refresh_state()
 
-Atualiza `visible` e `disabled` a partir de `required_flag` e `DialogueDirector.is_running`. Com a saída desativada, o cursor volta à seta do projeto.
+Atualiza `visible` e `disabled` a partir de `required_flag` e `DialogueDirector.is_running`.
 
 `Location` chama este método quando o diálogo abre ou fecha. A seta também chama, no `_ready` e em `GameState.flag_changed`.
 

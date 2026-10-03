@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://sqisom7qbg0p" path="res://game/scripts/hotspot.gd" id="2_hotspot"]
 [ext_resource type="Script" uid="uid://nvjkgra5sq1n" path="res://game/scripts/exit_arrow.gd" id="3_exit"]
 [ext_resource type="Texture2D" uid="uid://ldftq0bewmhk" path="res://assets/kenney_cursor-pack/PNG/Outline/Default/gauntlet_open.png" id="4_hand"]
-[ext_resource type="Texture2D" uid="uid://j7iuxlwy5e7o" path="res://assets/kenney_cursor-pack/PNG/Outline/Double/arrow_e.png" id="5_arrow"]
 
 [node name="Office" type="Control" unique_id=409360025]
 layout_mode = 3
@@ -55,9 +54,7 @@ offset_bottom = 440.0
 theme_override_font_sizes/font_size = 24
 text = "Mesa"
 script = ExtResource("2_hotspot")
-timeline = "res://game/dialogue/timelines/office_intro.dtl"
-timeline_if_flag = "res://game/dialogue/timelines/examine_desk.dtl"
-flag = "got_badge"
+timeline = "res://game/dialogue/timelines/pegar_distintivo.dtl"
 icon_texture = ExtResource("4_hand")
 proportions = Vector2(32, 32)
 hotspot = Vector2(9, 4)
@@ -69,13 +66,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -240.0
+offset_left = -129.0
 offset_top = -240.0
 offset_bottom = 240.0
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("3_exit")
 target_scene = "res://game/scenes/locations/lobby.tscn"
-icon_texture = ExtResource("5_arrow")
-proportions = Vector2(64, 64)
-hotspot = Vector2(32, 32)
