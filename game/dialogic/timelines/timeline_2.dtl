@@ -4,3 +4,4 @@ join characters/Testemunha rightmost
 characters/Testemunha: Eu vi um cara careca correndo pela porta de entrada.
 update Pericles/Pericles [animation="Shake Y" length="0.2"]
 Pericles/Pericles: Obrigado.
+leave --All-- [animation="Fade Out" length="0.2"]
