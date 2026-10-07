@@ -1,0 +1,3 @@
+join Pericles/Pericles left
+Pericles/Pericles: Meu distintivo, vou leva-lo comigo.
+[signal arg="give_item:attorneys_badge"]

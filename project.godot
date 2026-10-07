@@ -26,20 +26,20 @@ DialogueDirector="*res://game/autoload/dialogue_director.gd"
 [dialogic]
 
 directories/dch_directory={
-"Pericles": "res://game/dialogue/characters/Pericles/Pericles.dch",
 "Pericles/Pericles": "res://game/dialogic/characters/Pericles/Pericles.dch",
-"Testemunha": "res://game/dialogue/characters/Testemunha.dch",
-"characters/Testemunha": "res://game/dialogic/characters/Testemunha.dch"
+"characters/Testemunha": "res://game/dialogic/characters/Testemunha/Testemunha.dch"
 }
 directories/dtl_directory={
-"conversa_testemunha": "res://game/dialogue/timelines/conversa_testemunha.dtl",
-"timelines/conversa_testemunha": "res://game/dialogic/timelines/conversa_testemunha.dtl",
-"timelines/pegar_distintivo": "res://game/dialogic/timelines/pegar_distintivo.dtl"
+"timeline_1": "res://game/dialogic/timelines/timeline_1.dtl",
+"timeline_2": "res://game/dialogic/timelines/timeline_2.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://game/dialogic/styles/textbox.tres",
+"textbox": "res://game/dialogic/styles/textbox.tres"
+}
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://game/dialogic/styles/textbox.tres"]
+layout/default_style="res://game/dialogic/styles/textbox.tres"
 variables={}
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -75,6 +75,7 @@ audio/channel_defaults={
 }
 history/visited_event_history_enabled=true
 history/simple_history_enabled=true
+text/autocolor_names=true
 
 [display]
 
