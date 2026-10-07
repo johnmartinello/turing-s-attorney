@@ -430,7 +430,9 @@ Botão que abre uma timeline do Dialogic.
 
 As propriedades ficam no inspetor. O clique chama `DialogueDirector.start()` com a timeline escolhida. Uma conversa nova é um `.dtl` em `res://game/dialogue/timelines/`, colocado em `timeline`.
 
-O cursor de `Interaction` troca enquanto o ponteiro está dentro do botão.
+`texture` desenha um asset no retângulo do nó. Posicione e redimensione o controle no editor; a imagem preenche essa área e acompanha o tamanho. Sem textura, o botão não desenha caixa nem imagem, e o clique continua na área. O script é `@tool`, então a imagem aparece no editor ao atribuir a textura. Se o nó ainda não tem tamanho, o retângulo assume o tamanho da imagem.
+
+O cursor de `Interaction` troca enquanto o ponteiro está dentro do botão. A cor do ícone fica branca em todo estado, inclusive com o botão desativado durante o diálogo.
 
 A mesa do escritório usa `timeline` = `pegar_distintivo.dtl`. A testemunha do saguão usa `timeline` = `conversa_testemunha.dtl`.
 
@@ -438,6 +440,7 @@ A mesa do escritório usa `timeline` = `pegar_distintivo.dtl`. A testemunha do s
 
 | Tipo | Propriedade | Valor padrão |
 | --- | --- | --- |
+| Texture2D | texture | `null` |
 | String | timeline | `""` |
 | String | timeline_if_flag | `""` |
 | String | flag | `""` |
@@ -453,6 +456,12 @@ A mesa do escritório usa `timeline` = `pegar_distintivo.dtl`. A testemunha do s
 ---
 
 ## Descrições das propriedades
+
+### Texture2D texture = null
+
+Imagem deste ponto de interação. O retângulo do controle é o quadro: arraste o nó para posicionar e puxe as bordas para escalar. A textura estica para preencher o retângulo.
+
+Vazia, nada é desenhado. A área definida pelos offsets continua clicável.
 
 ### String timeline = ""
 

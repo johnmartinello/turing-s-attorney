@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5bworp2x8ffl"
-path="res://.godot/imported/images.png-136540a2b4848f07c3c9aaf81be92ce8.ctex"
+uid="uid://dl05dklh4eg3c"
+path="res://.godot/imported/12705616.jpg-ed93760eaa958e8c82a17be7ff55c1bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/dialogue/characters/Pericles/images.png"
-dest_files=["res://.godot/imported/images.png-136540a2b4848f07c3c9aaf81be92ce8.ctex"]
+source_file="res://game/dialogic/characters/Testemunha/12705616.jpg"
+dest_files=["res://.godot/imported/12705616.jpg-ed93760eaa958e8c82a17be7ff55c1bb.ctex"]
 
 [params]
 

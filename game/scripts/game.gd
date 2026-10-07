@@ -1,6 +1,6 @@
 extends Control
 
-const START_SCENE := "res://game/scenes/locations/office.tscn"
+const START_SCENE := "res://game/scenes/locations/office/office.tscn"
 
 @onready var _record_button: Button = %RecordButton
 @onready var _inventory_panel: InventoryPanel = %InventoryPanel

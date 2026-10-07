@@ -27,11 +27,14 @@ DialogueDirector="*res://game/autoload/dialogue_director.gd"
 
 directories/dch_directory={
 "Pericles": "res://game/dialogue/characters/Pericles/Pericles.dch",
-"Testemunha": "res://game/dialogue/characters/Testemunha.dch"
+"Pericles/Pericles": "res://game/dialogic/characters/Pericles/Pericles.dch",
+"Testemunha": "res://game/dialogue/characters/Testemunha.dch",
+"characters/Testemunha": "res://game/dialogic/characters/Testemunha.dch"
 }
 directories/dtl_directory={
 "conversa_testemunha": "res://game/dialogue/timelines/conversa_testemunha.dtl",
-"pegar_distintivo": "res://game/dialogue/timelines/pegar_distintivo.dtl"
+"timelines/conversa_testemunha": "res://game/dialogic/timelines/conversa_testemunha.dtl",
+"timelines/pegar_distintivo": "res://game/dialogic/timelines/pegar_distintivo.dtl"
 }
 layout/style_directory={}
 glossary/default_case_sensitive=true
@@ -70,12 +73,13 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
+history/visited_event_history_enabled=true
+history/simple_history_enabled=true
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 mouse_cursor/custom_image="res://assets/kenney_cursor-pack/PNG/Outline/Default/gauntlet_point.png"

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cmbol2lbxswik"]
+
+[ext_resource type="Script" uid="uid://demms3tchpq4x" path="res://game/scripts/location.gd" id="1_y4idt"]
+[ext_resource type="Texture2D" uid="uid://swnqhnme15k6" path="res://game/scenes/locations/lobby/pngtree-modern-hotel-lobby-with-elegant-reception-desk-and-luxurious-decor-picture-image_16535130.jpg" id="2_dao56"]
+[ext_resource type="Script" uid="uid://sqisom7qbg0p" path="res://game/scripts/hotspot.gd" id="2_fqaig"]
+[ext_resource type="Texture2D" uid="uid://ldftq0bewmhk" path="res://assets/kenney_cursor-pack/PNG/Outline/Default/gauntlet_open.png" id="3_dao56"]
+[ext_resource type="Script" uid="uid://nvjkgra5sq1n" path="res://game/scripts/exit_arrow.gd" id="4_ugk6w"]
+
+[node name="Lobby" type="Control" unique_id=1111048883]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y4idt")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=254909475]
+layout_mode = 0
+offset_right = 1283.0
+offset_bottom = 717.0
+texture = ExtResource("2_dao56")
+
+[node name="Witness" type="Button" parent="." unique_id=943388747]
+layout_mode = 1
+offset_left = 685.0
+offset_top = 317.0
+offset_right = 838.0
+offset_bottom = 596.0
+theme_override_font_sizes/font_size = 24
+text = "Testemunha"
+script = ExtResource("2_fqaig")
+timeline = "uid://b51c10vwg1rds"
+icon_texture = ExtResource("3_dao56")
+proportions = Vector2(32, 32)
+hotspot = Vector2(9, 4)
+
+[node name="ToOffice" type="Button" parent="." unique_id=1804468579]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -240.0
+offset_right = 140.0
+offset_bottom = 240.0
+grow_vertical = 2
+script = ExtResource("4_ugk6w")
+target_scene = "uid://dmtuvq61135ot"
+direction = 0
